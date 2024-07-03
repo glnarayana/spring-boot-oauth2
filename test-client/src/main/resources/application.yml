@@ -1,0 +1,15 @@
+server:
+  port: 9090
+spring:
+  application:
+    name: test-client
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:9000/oauth2/jwks
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+    org.springframework.security.oauth2: DEBUG
