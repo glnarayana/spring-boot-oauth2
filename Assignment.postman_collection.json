@@ -1,0 +1,93 @@
+{
+	"info": {
+		"_postman_id": "17c4ed54-ce06-4e84-a450-d46ee878ddae",
+		"name": "Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9016338",
+		"_collection_link": "https://med360-app.postman.co/workspace/adbeets~fb83375a-ee40-4431-a249-1c0840a6e641/collection/9016338-17c4ed54-ce06-4e84-a450-d46ee878ddae?action=share&source=collection_link&creator=9016338"
+	},
+	"item": [
+		{
+			"name": "generate token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "test-client",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "secret",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "user1",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/oauth2/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test client API",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiJhOTJiN2FlNC04MjFkLTQxN2ItYTM5YS1lNzkxYzU1ODQ1OTMiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ0ZXN0LWNsaWVudCIsImF1ZCI6InRlc3QtY2xpZW50IiwibmJmIjoxNzIwMDI3NDQ5LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjkwMDAiLCJleHAiOjE3MjAwMjc3NDksImlhdCI6MTcyMDAyNzQ0OSwianRpIjoiNzA3MGUwNmQtMGNmNC00NmFiLWI3ODktZjUxMWQ0OGZjMzI3In0.0NBts1Ynubmk9PZMFX8WpadTmdN5yBnNHQUcwmNSGwhBJYCphxF5-XhlUKeps-Puez1FzZKABH9vgGZu2h6ZhOEsbITlWJeKaWhRqsHCqCkDDVwLb-JZCdyFW4iqBdXWokj7CPutT8Pi6LDnX-DcteE0t8TIJ7N4fN1y1gO1B3FEqHDxZGgIgCFHb78p47a-EkbD-raV373HoLUnQVSstsiap-D7DVVPuon2drAlzmKOYnPnBgGNH2BImY6Lx9z3IkU4irLRDF5Ti9ByyF2GDQ4eJi3ca-hSk00tTKxffB_gIWIqRek3oI3i_g_rI3U-u6kE5hXV6hD6CLX2nO6Mrg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/test/secured",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"test",
+						"secured"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
